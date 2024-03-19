@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
+import 'package:getxcli_yantralive/infrastructure/navigation/navigation.dart';
 import 'package:getxcli_yantralive/presentation/widget/titleText.dart';
 import 'package:intl/intl.dart';
 
@@ -55,11 +56,13 @@ class HomeScreen extends GetView<HomeController> {
                 SizedBox(
                   height: 10.h,
                 ),
+
                 FutureBuilder(
                     future: controller.loadData(),
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return Expanded(
+
                           child: ListView.separated(
                               shrinkWrap: true,
                               itemBuilder: (context, index) {
